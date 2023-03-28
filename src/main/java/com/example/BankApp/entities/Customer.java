@@ -20,8 +20,6 @@ public class Customer {
     @Column(nullable = false)
     private String phone;
 
-
-
     public Customer(Long id, String firstname, String lastname, String phone){
         this.id=id;
         this.firstname=firstname;
