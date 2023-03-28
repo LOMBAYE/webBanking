@@ -15,10 +15,15 @@ public class Account {
     @Column(nullable = false)
     private int balance;
 
-    public Account(Long id,int accountNum,int balance){
+    @ManyToOne
+    @JoinColumn(name = "customer_id")
+    private Customer customer;
+
+    public Account(Long id, int accountNum, int balance, Customer customer){
         this.accountNum=accountNum;
         this.id=id;
         this.balance=balance;
+        this.customer = customer;
     }
 
     public Account() {
@@ -47,5 +52,13 @@ public class Account {
 
     public void setBalance(int balance) {
         this.balance = balance;
+    }
+
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
     }
 }
