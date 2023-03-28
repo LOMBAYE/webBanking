@@ -1,7 +1,5 @@
 package com.example.BankApp.entities;
 
-
-
 import jakarta.persistence.*;
 
 @Entity
@@ -22,6 +20,11 @@ public class Account {
         this.id=id;
         this.balance=balance;
     }
+
+    public Account() {
+
+    }
+
     public Long getId() {
         return id;
     }
