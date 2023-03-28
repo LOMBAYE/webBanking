@@ -20,15 +20,13 @@ public class Customer {
     @Column(nullable = false)
     private String phone;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Account> accounts;
 
-    public Customer(Long id, String firstname, String lastname, String phone, List<Account> accounts){
+
+    public Customer(Long id, String firstname, String lastname, String phone){
         this.id=id;
         this.firstname=firstname;
         this.lastname=lastname;
         this.phone=phone;
-        this.accounts = accounts;
     }
 
     public Customer() {
@@ -67,11 +65,4 @@ public class Customer {
         this.phone = phone;
     }
 
-    public List<Account> getAccounts() {
-        return accounts;
-    }
-
-    public void setAccounts(List<Account> accounts) {
-        this.accounts = accounts;
-    }
 }

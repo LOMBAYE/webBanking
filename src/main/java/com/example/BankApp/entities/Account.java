@@ -16,7 +16,6 @@ public class Account {
     private int balance;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
     private Customer customer;
 
     public Account(Long id, int accountNum, int balance, Customer customer){
