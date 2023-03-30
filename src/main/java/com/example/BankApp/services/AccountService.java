@@ -36,7 +36,6 @@ public class AccountService {
     public Account updateAccount(Long id, Account account) {
         Account existingAccount = accountRepository.findById(id).orElse(null);
         if (existingAccount != null) {
-            existingAccount.setAccountNum(account.getAccountNum());
             existingAccount.setBalance(account.getBalance());
             accountRepository.save(existingAccount);
         }

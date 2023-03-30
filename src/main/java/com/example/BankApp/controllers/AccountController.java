@@ -41,7 +41,7 @@ public class AccountController {
         return  accountService.createAccount(account,idCustomer);
     }
     @PutMapping("/accounts/{id}")
-    public Account updateAccount(@PathVariable Long id, Account account) {
+    public Account updateAccount(@PathVariable Long id,@RequestBody Account account) {
         return accountService.updateAccount(id,account);
     }
 
